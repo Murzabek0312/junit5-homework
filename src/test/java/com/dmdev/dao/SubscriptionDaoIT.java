@@ -19,7 +19,7 @@ class SubscriptionDaoIT extends IntegrationTestBase {
     private final SubscriptionDao subscriptionDao = SubscriptionDao.getInstance();
 
     @Test
-    void findAll() {
+    void shouldFindAll() {
         // Given:
         var subscription1 = subscriptionDao.insert(getSubscription("name1"));
         var subscription2 = subscriptionDao.insert(getSubscription("name2"));
@@ -42,7 +42,7 @@ class SubscriptionDaoIT extends IntegrationTestBase {
     }
 
     @Test
-    void findById() {
+    void shouldFindById() {
         // Given:
         var name = "name";
         var subscription = subscriptionDao.insert(getSubscription(name));
@@ -61,7 +61,7 @@ class SubscriptionDaoIT extends IntegrationTestBase {
     }
 
     @Test
-    void delete() {
+    void shouldDelete() {
         // Given:
         var subscription = subscriptionDao.insert(getSubscription("name"));
 
@@ -78,7 +78,7 @@ class SubscriptionDaoIT extends IntegrationTestBase {
     }
 
     @Test
-    void update() {
+    void shouldUpdate() {
         // Given:
         var subscription = subscriptionDao.insert(getSubscription("name1"));
         var expirationDate = Instant.now().plusSeconds(3600);
@@ -105,7 +105,7 @@ class SubscriptionDaoIT extends IntegrationTestBase {
     }
 
     @Test
-    void insert() {
+    void shouldInsert() {
         // Given-When:
         var subscription = subscriptionDao.insert(getSubscription("name"));
 
@@ -114,7 +114,7 @@ class SubscriptionDaoIT extends IntegrationTestBase {
     }
 
     @Test
-    void findByUserId() {
+    void shouldFindByUserId() {
         // Given:
         var userId = 987;
         var name1 = "name1";
